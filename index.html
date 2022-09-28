@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width= , initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: rgb(128, 128, 226);
+            padding: 20px;
+        }
+
+        li {
+            display: inline;
+            margin-left: 20px;
+            color: white;
+
+
+        }
+
+        button {
+            display: none;
+        }
+
+        label.logo {
+            font-size: 40px;
+            font-weight: 700;
+            color: white;
+            margin-left: 6%;
+        }
+
+        @media screen and (max-width: 768px) {
+            button {
+                display: block;
+            }
+
+            nav {
+                position: relative;
+            }
+
+            ul {
+                position: absolute;
+                top: 59px;
+                display: flex;
+                flex-direction: column;
+                left: -1px;
+                background-color: rgb(128, 128, 226);
+                padding: 20px 0;
+                width: 100%;
+                visibility: hidden;
+            }
+
+            li {
+                margin-top: 20px;
+            }
+
+            .active {
+                visibility: visible;
+
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <header>
+            <label class="logo">PRAG</label>
+        </header>
+        <button onclick="Collapse()"><img src="./download.png" alt="" style="height: 25px;"></button>
+        <ul id="menu">
+            <li>Home</li>
+            <li>About</li>
+            <li>Contact</li>
+
+        </ul>
+    </nav>
+    <script>
+        function Collapse() {
+            document.getElementById('menu').classList.toggle('active');
+        }
+    </script>
+</body>
+
+</html>
